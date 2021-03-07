@@ -47,22 +47,50 @@ public class Magasin {
 		this.setStocke(stocke);
 	}
 	
-	public void refill() {
+	public void refillV(){
 		
 		for (int i=0; i < this.getVestes().length; i++) {
 			if (this.getVestes()[i] == null) {
 				for (int j=0; j < stocke.getProduits().size(); j++) {
 					if(stocke.getProduits().get(j).getClass().getSimpleName().equals("Veste")) {
 						this.getVestes()[j] = (Veste) stocke.getProduits().get(j);
-						stocke.supprimer(stocke.getProduits().get(j));
-						
-						
+						//stocke.supprimer(stocke.getProduits().get(j));		
 					}
 					else return;
 				}
-				
-				
+				}
+			
+			else return;		
+			
 			}
+	}
+	
+	public void refillP(){	
+		for (int i=0; i < this.getPantalons().length; i++) {
+			if (this.getPantalons()[i] == null) {
+				for (int j=0; j < stocke.getProduits().size(); j++) {
+					if(stocke.getProduits().get(j).getClass().getSimpleName().equals("Pantalon")) {
+						this.getPantalons()[j] = (Pantalon) stocke.getProduits().get(j);
+						//stocke.supprimer(stocke.getProduits().get(j));		
+					}
+					else return;
+				}
+				}
+			
+			else return;		
+			
+			}}
+	public void refillS(){
+		for (int o=0; o < this.getSkis().length; o++) {
+			if (this.getSkis()[o] == null) {
+				for (int m=0; m < stocke.getProduits().size(); m++) {
+					if(stocke.getProduits().get(m).getClass().getSimpleName().equals("Ski")) {
+						this.getSkis()[m] = (Ski) stocke.getProduits().get(m);
+						//stocke.supprimer(stocke.getProduits().get(j));		
+					}
+					else return;
+				}
+				}
 			
 			else return;		
 			

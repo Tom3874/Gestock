@@ -6,6 +6,8 @@ public final class Stock {
 	
 	private static Stock instance;
 	
+	
+
 	public static Stock getInstance() {
 		if (instance == null) {
 			instance = new Stock();
@@ -36,9 +38,11 @@ public final class Stock {
 	}
 	
 	public void supprimer(Produit a) {
-		this.getProduits().remove(a);
-		
-	}
+	
+			this.getProduits().remove(a);
+			}
+			
+	
 	public void listingStock() {
 		System.out.print("-----------------------------------------"+"\n");
 		System.out.print("Listing des produits du stock"+"\n");

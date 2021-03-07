@@ -42,11 +42,12 @@ public class Gestion {
 		
 		
 		
-		m.refill();
+		m.refillV();
+		m.refillP();
+		m.refillS();
 		m.listingMagasin();
 		s.listingStock();
-		Stock s1 = new Stock();
-		s1.listingStock();
+		
 	}
 
 }
