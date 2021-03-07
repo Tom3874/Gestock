@@ -73,11 +73,11 @@ public class Magasin {
 						this.getPantalons()[j] = (Pantalon) stocke.getProduits().get(j);
 						//stocke.supprimer(stocke.getProduits().get(j));		
 					}
-					else return;
+					//else return;
 				}
 				}
 			
-			else return;		
+			//else return;		
 			
 			}}
 	public void refillS(){
@@ -88,11 +88,11 @@ public class Magasin {
 						this.getSkis()[m] = (Ski) stocke.getProduits().get(m);
 						//stocke.supprimer(stocke.getProduits().get(j));		
 					}
-					else return;
+					//else return;
 				}
 				}
 			
-			else return;		
+			//else return;		
 			
 			}
 		}

@@ -45,4 +45,7 @@ public class Produit {
 	//public void ajouterstock(Produit p) {
 		//stock.getProduits().add(p);
 	//}
-}
+
+	
+	}
+

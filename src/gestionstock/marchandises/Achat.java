@@ -100,9 +100,7 @@ public class Achat extends JFrame {
 		scrollPane_1.setBounds(10, 116, 414, 106);
 		contentPane.add(scrollPane_1);
 		
-		JList<? extends E> list = new JList();
-		scrollPane_1.setViewportView(list);
-		
+	
 		JButton btnacheter = new JButton("Acheter");
 		btnacheter.setBounds(166, 233, 89, 23);
 		contentPane.add(btnacheter);
