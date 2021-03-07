@@ -53,14 +53,16 @@ public class Magasin {
 			if (this.getVestes()[i] == null) {
 				for (int j=0; j < stocke.getProduits().size(); j++) {
 					if(stocke.getProduits().get(j).getClass().getSimpleName().equals("Veste")) {
-						this.getVestes()[j] = (Veste) stocke.getProduits().get(j);
-						//stocke.supprimer(stocke.getProduits().get(j));		
+						this.getVestes()[i] = (Veste) stocke.getProduits().get(j);
+						stocke.supprimer(stocke.getProduits().get(j));		
+						break;
 					}
-					else return;
+					
+					//else return;
 				}
 				}
 			
-			else return;		
+			//else return;		
 			
 			}
 	}
@@ -70,8 +72,9 @@ public class Magasin {
 			if (this.getPantalons()[i] == null) {
 				for (int j=0; j < stocke.getProduits().size(); j++) {
 					if(stocke.getProduits().get(j).getClass().getSimpleName().equals("Pantalon")) {
-						this.getPantalons()[j] = (Pantalon) stocke.getProduits().get(j);
-						//stocke.supprimer(stocke.getProduits().get(j));		
+						this.getPantalons()[i] = (Pantalon) stocke.getProduits().get(j);
+						stocke.supprimer(stocke.getProduits().get(j));	
+						break;
 					}
 					//else return;
 				}
@@ -81,12 +84,13 @@ public class Magasin {
 			
 			}}
 	public void refillS(){
-		for (int o=0; o < this.getSkis().length; o++) {
-			if (this.getSkis()[o] == null) {
+		for (int i=0; i < this.getSkis().length; i++) {
+			if (this.getSkis()[i] == null) {
 				for (int m=0; m < stocke.getProduits().size(); m++) {
 					if(stocke.getProduits().get(m).getClass().getSimpleName().equals("Ski")) {
-						this.getSkis()[m] = (Ski) stocke.getProduits().get(m);
-						//stocke.supprimer(stocke.getProduits().get(j));		
+						this.getSkis()[i] = (Ski) stocke.getProduits().get(m);
+						stocke.supprimer(stocke.getProduits().get(m));	
+						break;
 					}
 					//else return;
 				}
@@ -97,7 +101,11 @@ public class Magasin {
 			}
 		}
 	
-	
+	public void refill() {
+		refillP();
+		refillV();
+		refillS();
+	}
 	public void listingMagasin() {
 		String str;
 		Veste veste;
