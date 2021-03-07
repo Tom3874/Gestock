@@ -3,7 +3,7 @@ package gestionstock.marchandises;
 public class Produit {
 	protected int num;
 	protected double prix;
-	protected Stock stock;
+
 	
 	public Produit(int m) {
 		this.setNum(m);
@@ -32,9 +32,7 @@ public class Produit {
 		this.num = num;
 	}
 
-	public Stock getStock() {
-		return stock;
-	}
+
 	public String toString() {
 		String str = "Produit n°" + this.getNum();
 		str = str + " à " + this.getPrix() + " € : ";

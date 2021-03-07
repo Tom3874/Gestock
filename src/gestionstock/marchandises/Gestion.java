@@ -5,14 +5,13 @@ public class Gestion {
 	public static void main(String[] args) {
 		Stock s = new Stock();
 		Magasin m = new Magasin(s);
+		
+				
 		Fournisseur f = new Fournisseur(001, "FR");
 		Fournisseur f2 = new Fournisseur(002, "IT");
 		Fournisseur f3 = new Fournisseur(003, "ES");
 		Fournisseur f4 = new Fournisseur(004, "GB");
-//		f.fabrique(10);
-//		f2.fabrique(5);
-//		f3.fabrique(15);
-//		f4.fabrique(5);
+
 		Veste v = new Veste(1, 99.99, "ROUGE", true, "M");
 		Veste v1 = new Veste(2, 80, "NOIRE", true, "L");
 		Veste v2 = new Veste(3, 80, "NOIRE", true, "M");
@@ -46,6 +45,8 @@ public class Gestion {
 		m.refill();
 		m.listingMagasin();
 		s.listingStock();
+		Stock s1 = new Stock();
+		s1.listingStock();
 	}
 
 }

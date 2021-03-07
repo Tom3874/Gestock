@@ -56,10 +56,14 @@ public class Magasin {
 						this.getVestes()[j] = (Veste) stocke.getProduits().get(j);
 						stocke.supprimer(stocke.getProduits().get(j));
 						
+						
 					}
 					else return;
 				}
+				
+				
 			}
+			
 			else return;		
 			
 			}

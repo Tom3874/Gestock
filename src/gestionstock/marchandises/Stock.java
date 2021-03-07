@@ -2,11 +2,27 @@ package gestionstock.marchandises;
 
 import java.util.LinkedList;
 
-public class Stock {
+public final class Stock {
 	
-
+	private static Stock instance;
+	
+	public static Stock getInstance() {
+		if (instance == null) {
+			instance = new Stock();
+		}
+		return instance;
+	}
+	
+	public Stock() {
+			
+	}
+	 public Object clone() throws CloneNotSupportedException {
+		    throw new CloneNotSupportedException();
+	 }
+	
 	private LinkedList<Produit> produits = new LinkedList<Produit>();
-
+	
+	
 	public LinkedList<Produit> getProduits() {
 		return produits;
 	}
