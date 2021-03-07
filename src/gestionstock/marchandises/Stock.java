@@ -42,6 +42,13 @@ public final class Stock {
 			this.getProduits().remove(a);
 			}
 			
+	public void reapproV(int a, double p, String c, String t) {
+		Veste n= new Veste(a,p,c,t);
+		this.getProduits().add(n);
+		
+		
+		
+	}
 	
 	public void listingStock() {
 		System.out.print("-----------------------------------------"+"\n");

@@ -12,12 +12,12 @@ public class Pantalon extends Vetement {
 		this.taille = taille;
 	}
 	
-	public Pantalon(int a, double q, String c, Boolean s) {
-		super(a, q, c, s);
+	public Pantalon(int a, double q, String c) {
+		super(a, q, c);
 		}
 		
-		public Pantalon(int b, double z, String v, Boolean d, int t) {
-			this(b,z,v,d);
+		public Pantalon(int b, double z, String v, int t) {
+			this(b,z,v);
 			this.setTaille(t);
 	}
 		public Stock getStock() {

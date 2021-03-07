@@ -75,6 +75,7 @@ public class Vente extends JFrame {
 		getContentPane().add(btnproduit);
 		btnproduit.addActionListener(new ActionListener(){
 		
+			
 		public void actionPerformed(ActionEvent e) {
 			Veste[] vestes = getMagasin().getVestes();
 			Ski[] skis = getMagasin().getSkis();
@@ -93,6 +94,7 @@ public class Vente extends JFrame {
 			for (int i = 0; i < vestes.length; i++) {
 				if (vestes[i].getNum() == o && vestes[i] != null) {
 					str = vestes[i].toString();
+					break;
 				}
 				else str = "Il n'existe pas de produit veste au numéro " + o ;
 			}
@@ -100,6 +102,7 @@ public class Vente extends JFrame {
 				for (int i = 0; i < skis.length; i++) {
 					if (skis[i].getNum() == o && skis[i] != null) {
 						str = skis[i].toString();
+						break;
 					}
 					else str = "Il n'existe pas de produit ski au numéro " + o ;
 				}
@@ -107,14 +110,16 @@ public class Vente extends JFrame {
 				for (int i = 0; i < pantalons.length; i++) {
 					if (pantalons[i].getNum() == o && pantalons[i] != null) {
 						str = pantalons[i].toString();
+						break;
 					}
 					else str = "Il n'existe pas de produit pantalon au numéro " + o ;
 				}
-			}else str = "Aucun produit n'a été sélectionné";
+			}else str = "Aucun type de produit n'a été sélectionné";
 			
 			
-			listVente.setText(str);			
+			listVente.setText(str);	
 		}
+		
 		});
 		
 		JComboBox comboBox = new JComboBox();
@@ -127,6 +132,53 @@ public class Vente extends JFrame {
 		JButton btnVente = new JButton("Vente");
 		btnVente.setBounds(485, 327, 89, 23);
 		getContentPane().add(btnVente);
+		btnVente.addActionListener(new ActionListener(){
+		
+		public void actionPerformed(ActionEvent e) {
+						
+			String str ="";
+			boolean bVeste = vesteBtn.isSelected();
+			boolean bSki = skiBtn.isSelected();
+			boolean bPantalon = pantalonBtn.isSelected();
+			String m = txtproduit.getText();
+			int o = Integer.parseInt(m);
+			
+			if (bVeste)
+			{
+			for (int i = 0; i < getMagasin().getVestes().length; i++) {
+				if (getMagasin().getVestes()[i].getNum() == o && getMagasin().getVestes()[i] != null) {
+					str = getMagasin().getVestes()[i].toString() + " : vendue.";
+					magasin.getVestes()[i] = (Veste) null;
+					break;
+				}
+				else str = "Il n'existe pas de produit veste au numéro " + o + "donc ne peut pas être vendu";
+			}
+			}else if(bSki) {
+				for (int i = 0; i < getMagasin().getSkis().length; i++) {
+					if (getMagasin().getSkis()[i].getNum() == o && getMagasin().getSkis()[i] != null) {
+						str = getMagasin().getSkis()[i].toString() + ": vendu.";
+						break;
+					}
+					else str = "Il n'existe pas de produit ski au numéro " + o ;
+				}
+			}else if(bPantalon) {
+				for (int i = 0; i < getMagasin().getPantalons().length; i++) {
+					if (getMagasin().getPantalons()[i].getNum() == o && getMagasin().getPantalons()[i] != null) {
+						str =getMagasin().getPantalons()[i].toString() + ": vendu.";
+						break;
+					}
+					else str = "Il n'existe pas de produit pantalon au numéro " + o ;
+				}
+			}else str = "Aucun type de produit n'a été sélectionné";
+			
+			
+			listVente.setText(str);
+			magasin.listingMagasin();
+			
+		}
+			
+			
+		});
 		
 		txtclient = new JTextField();
 		txtclient.setBounds(91, 99, 240, 20);
@@ -175,19 +227,19 @@ public class Vente extends JFrame {
 		Fournisseur f3 = new Fournisseur(003, "ES");
 		Fournisseur f4 = new Fournisseur(004, "GB");
 
-		Veste v = new Veste(1, 99.99, "ROUGE", true, "M");
-		Veste v1 = new Veste(2, 80, "NOIRE", true, "L");
-		Veste v2 = new Veste(3, 80, "NOIRE", true, "M");
-		Veste v3 = new Veste(4, 99.99, "ROUGE", true, "L");
-		Veste v4 = new Veste(5, 99.99, "ROUGE", true, "M");
+		Veste v = new Veste(1, 99.99, "ROUGE", "M");
+		Veste v1 = new Veste(2, 80, "NOIRE", "L");
+		Veste v2 = new Veste(3, 80, "NOIRE", "M");
+		Veste v3 = new Veste(4, 99.99, "ROUGE", "L");
+		Veste v4 = new Veste(5, 99.99, "ROUGE", "M");
 		Ski sk1 = new Ski(6, 500, 1.90, 2.0, "Salomon");
 		Ski sk2 = new Ski(7, 500, 1.80, 2.0, "Salomon");
 		Ski sk3 = new Ski(8, 500, 2.10, 2.0, "Salomon");
-		Pantalon p1 = new Pantalon(9, 75.00, "BLANC", true, 38);
-		Pantalon p2 = new Pantalon(10, 75.00, "NOIR", true, 38);
-		Pantalon p3 = new Pantalon(11, 75.00, "BLANC", true, 40);
-		Pantalon p4 = new Pantalon(12, 75.00, "NOIR", true, 38);
-		Pantalon p5 = new Pantalon(13, 75.00, "NOIR", true, 40);
+		Pantalon p1 = new Pantalon(9, 75.00, "BLANC", 38);
+		Pantalon p2 = new Pantalon(10, 75.00, "NOIR", 38);
+		Pantalon p3 = new Pantalon(11, 75.00, "BLANC", 40);
+		Pantalon p4 = new Pantalon(12, 75.00, "NOIR", 38);
+		Pantalon p5 = new Pantalon(13, 75.00, "NOIR", 40);
 		s.ajouter(v);
 		s.ajouter(v1);
 		s.ajouter(v2);

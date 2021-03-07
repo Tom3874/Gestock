@@ -42,10 +42,8 @@ public class Produit {
 	public void afficherInfos() {
 		System.out.print(this.toString() + "\n");
 	}
-	//public void ajouterstock(Produit p) {
-		//stock.getProduits().add(p);
-	//}
-
 	
-	}
+}
+	
+	
 

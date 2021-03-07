@@ -23,9 +23,9 @@ public class Veste extends Vetement {
 	}
 	
 
-	public Veste(int a, double q, String c, Boolean s) {
-	super(a, q, c, s);
-	//stock.getProduits().add(this);
+	public Veste(int a, double q, String c) {
+	super(a, q, c);
+	
 	
 	}
 	
@@ -35,8 +35,8 @@ public class Veste extends Vetement {
 		return chaine;
 	} 
 	
-	public Veste(int b, double z, String v, Boolean d, String t) {
-		this(b,z,v,d);
+	public Veste(int b, double z, String v, String t) {
+		this(b,z,v);
 		this.setTaille(t);
 		//stock.getProduits().add(this);
 		

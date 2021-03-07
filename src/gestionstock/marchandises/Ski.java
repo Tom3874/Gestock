@@ -39,4 +39,5 @@ public class Ski extends Produit {
 		chaine = chaine + "Ski " + this.getModele() + " de taille " + this.getTaille() + " mètre pesant " + this.getPoids() +"KG" ;
 		return chaine;
 	}
-}
+
+	}

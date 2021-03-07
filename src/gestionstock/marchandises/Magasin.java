@@ -47,6 +47,7 @@ public class Magasin {
 		this.setStocke(stocke);
 	}
 	
+	
 	public void refillV(){
 		
 		for (int i=0; i < this.getVestes().length; i++) {
@@ -66,7 +67,6 @@ public class Magasin {
 			
 			}
 	}
-	
 	public void refillP(){	
 		for (int i=0; i < this.getPantalons().length; i++) {
 			if (this.getPantalons()[i] == null) {
@@ -106,6 +106,7 @@ public class Magasin {
 		refillV();
 		refillS();
 	}
+	
 	public void listingMagasin() {
 		String str;
 		Veste veste;
