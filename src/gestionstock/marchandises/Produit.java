@@ -3,18 +3,15 @@ package gestionstock.marchandises;
 public class Produit {
 	protected int num;
 	protected double prix;
-
 	
 	public Produit(int m) {
 		this.setNum(m);
-		//stock.getProduits().add(this);
-	
+		
 	}
 	
 	public Produit(int n, double p) {
 		this.setNum(n);
 		this.setPrix(p);
-		//stock.getProduits().add(this);
 		
 	
 	}
@@ -42,6 +39,7 @@ public class Produit {
 	public void afficherInfos() {
 		System.out.print(this.toString() + "\n");
 	}
+	
 	
 }
 	

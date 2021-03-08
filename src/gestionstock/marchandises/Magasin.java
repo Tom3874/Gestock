@@ -107,7 +107,7 @@ public class Magasin {
 		refillS();
 	}
 	
-	public void listingMagasin() {
+	public  void listingMagasin() {
 		String str;
 		Veste veste;
 		Pantalon pantalon;

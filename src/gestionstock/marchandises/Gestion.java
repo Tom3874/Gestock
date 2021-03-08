@@ -41,13 +41,15 @@ public class Gestion {
 		
 		
 		
-		
+		s.listingStock();
 		m.refill();
 		m.listingMagasin();
 		s.listingStock();
-		s.reapproV(14, 70, "rouge","M");
-		s.reapproV(15, 70, "rouge","M");
+		s.reapproP(3, 14, 75.50, "BLEU", 40);
 		s.listingStock();
+	
+		
+		
 		
 	}
 

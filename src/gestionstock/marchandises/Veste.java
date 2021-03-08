@@ -38,10 +38,5 @@ public class Veste extends Vetement {
 	public Veste(int b, double z, String v, String t) {
 		this(b,z,v);
 		this.setTaille(t);
-		//stock.getProduits().add(this);
-		
-}
-	//public void ajouterstock() {
-		//super.ajouterstock(this); ;
-	//}
+	}
 }
